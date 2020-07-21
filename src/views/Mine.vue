@@ -3,6 +3,12 @@
        <h1>个人中心</h1>
         <!-- <p>id {{id}}</p>
         <p>name {{name}}</p> -->
+        <anchored-heading :level='3'>
+            Lorem ipsum dolor.
+            <s>hhhh
+                <div>uuuu</div>
+            </s>
+        </anchored-heading>
     </div>
 </template>
 

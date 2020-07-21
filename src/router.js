@@ -31,14 +31,14 @@ export let route =  new Router({
         },
         // {
         //     path: '/', redirect: (to, ...rest) => { // error
-        //         console.log(to);
-        //         console.log(rest);
+        //         
+        //         
         //         return '/about'; 
         //     }
         // },
         // {
         //     path: '/', redirect: function(to) { // error
-        //         // console.log(arguments);
+        //         // 
         //         return to; 
         //     }
         // },
@@ -151,33 +151,33 @@ const router = new Router({
         },
     ]
 })
-console.log(router, '========== hhhh');
+
 // 全局路由全局守卫
 router.beforeEach((to, from, next) => {
-    console.log(to, '=====to');
-    console.log(from, '====from');
+    
+    
     if(to.path !== '/login') { // 验证是否登录
-        console.log('======== 1');
+        
         if(window.isLogin) { // 已经登录
-            console.log('======== 2');
+            
             next()
         } else { // 没有登录，让他去登录
-            console.log('======== 3');
+            
             next('/login?redirect='+to.path)
         }
     } else { // 不需要验证
-        console.log('======== 4');
+        
         next();
     }
-    // console.log('======== 5');
+    // 
     // 放行
     // next();
 });
 
 // 全局后置钩子
 router.afterEach((to, from) => {
-    console.log(to, 'hhhhhhh');
-    console.log(from, 'hhhhhhh88888');
+    
+    
   })
 
 export default router;
