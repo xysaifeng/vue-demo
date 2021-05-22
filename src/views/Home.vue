@@ -2,6 +2,12 @@
     <keep-alive>
     <div class="home">
        <h1> 首页</h1>
+        <a :[disablEd]='abled'>{{msg}}---{{msg2}}</a><br>
+        <span v-once>{{msg}}----{{msg2}}</span><br>
+        <button @click="onclick">click</button>
+        <div>
+            <p>{{res()}}</p>
+        </div>
        <ul>
            <li>
                <router-link to='/home/news'>新闻</router-link>
@@ -24,6 +30,23 @@
 <script>
 export default {
     name: 'home',
+    data() {
+        return {
+            abled: 'tom',
+            disablEd: 'href',
+            msg: 'jack',
+            msg2: 'jack2'
+        }
+    },
+    methods: {
+        onclick() {
+            this.msg = 'tom'
+            this.msg2 = 'tom2'
+        },
+        res() {
+            return Date.now()
+        }
+    },
     created() {
         console.log(this.$route, '======== home');
     }

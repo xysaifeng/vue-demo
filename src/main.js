@@ -10,12 +10,13 @@ Vue.config.productionTip = false;
     </s>
 </anchored-heading> */}
 let getChildrenTextContent = function(children) {
-  debugger;
+  // debugger;
   console.log(children, 999);
   return children.map(node => {
     return node.children ? getChildrenTextContent(node.children) : node.text
   }).join('===')
 }
+
 
 // [' Lorem ipsum dolor. ', ['hhhh ', ['uuu']]]
 

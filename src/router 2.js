@@ -1,23 +1,30 @@
-import Vue from 'vue';
+import Vue from 'vue/dist/vue.esm.js'
+// import Vue from 'vue'
 import Router from 'vue-router';
 // 一级路由
 
 Vue.use(Router);
 
 import Watcher from './components/watch'
+import Todo from './components/addTodo'
+import Events from './components/events'
+import FormDemo from './components/form'
+import PropDemo from './components/prop'
+import CustomEvent from './components/customEvent'
+
 import NoMatch from './views/NoMatch'
 
 export let router = new Router({
     mode: 'history',
     routes: [
         {
-            path: '/', redirect: { name: 'watcher' }
+            path: '/', redirect: { name: 'customEvent' }
         },
        
         {
-            path: '/watcher',
-            name: 'watcher',
-            component: Watcher
+            path: '/customEvent',
+            name: 'customEvent',
+            component: CustomEvent
         },
         {
             path: '*',
